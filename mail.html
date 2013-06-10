@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="Css/Menu.css" type="text/css">
+<link rel="stylesheet" href="Css/Wrap.css" type="text/css">
+<title>SimpleMailNote</title>
+</head>
+<body>
+<div id="wraper">
+	<div id="header">
+			<h1><strong>TOEIC</strong>950点(リスニグ満点)エンジニアのHP</h1>
+		</div>
+	<div id="menu" >
+			<ul id="dropMenu"  style="">
+				<li><a href="index.html">Home</li>
+				<li><a href="http://toeicengineer.blogspot.jp/" target="_blank">Blog</a></li>
+				<li><a href="link.html" >Link</a></li>
+			</ul>
+		</div>
+	<h1>SimpleMailNote</h1>
+	<form action="mail.php" method="post">
+	<p>
+		<label for="MailAddress" a>mail</label>
+		<br/>
+		<input name="email" type="text" id="emailHeader" size="10" value="iga1128" maxlength="255" />
+		<label>@</label>
+		<input name="email" type="text" id="emailfooter" size="10"  value="msn.com" maxlength="255" />
+	</p>
+	<p>
+		<label>subject</label>
+		<br/>
+		<input name="subject" type="text" id="subject" size="50" maxlength="255" />
+	</p>
+	<p>
+		<label>contant</label>
+		<br/>
+		<textarea name="message" id="message" cols="50" rows="10"></textarea>
+	</p>
+	<input type="submit" value="送信する" />
+	</form>
+	<div id="footer" style="clear:both;">
+			<hr>
+			<p>Copyright 2013<strong>Hiroshi Igarashi</strong></p>
+			<a href="http://toeicengineer.blogspot.jp/" target="_blank">TOEIC950点(リスニング満点) わすれっぽいエンジニアブログです。</a>
+	</div>
+</div>
+</body>
+</html>
