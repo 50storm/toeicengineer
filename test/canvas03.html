@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>三角関数で円を描写</title>
+<title>サイン波</title>
 <style>
 body {
   margin: 0px;
@@ -14,15 +14,13 @@ canvas{background-color:grey;}
 function draw(){
 	var canvas = document.getElementById("canvas");
 	var context = canvas.getContext("2d");
-	context.moveTo(300,200);//描写開始位置
-	//半径r=100の円
-	for ( var x=0;x <= 360 ; x++){
-		var rad = x * Max.PI/180;
-		//var x = 100 * Max.cos(rad) + 200 ;
-		//var x = 100 * Max.cos(rad) ;
-		var x = 100 * Max.cos(rad) + 200;
-		var y = 100 * Max.sin(rad) + 200 ;
+	context.translate(0,150);//原点を(0,150)に移動
+	var th =0;//最初の角度
+	context.moveTo(0,150);//描写の開始位置
+	for (var x=0;x < 360 ; x++){
+		var y =  100 * Math.sin(th * Math.PI / 180) ;
 		context.lineTo(x,y);//直線を引く
+		th = th +1;
 	}
 	context.stroke();
 }
