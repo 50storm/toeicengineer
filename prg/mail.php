@@ -31,11 +31,10 @@ if(empty($_POST['emailFooter'])) {
 }
 
 
-
 $to = $_POST['emailHeader']."@".$_POST['emailFooter'];
 $subject = $_POST['subject'];
 $body = $_POST['message'];
-$from = mb_encode_mimeheader(mb_convert_encoding("50嵐","JIS","UTF-8"))."<iga1128@msn.com>";
+$from = mb_encode_mimeheader(mb_convert_encoding("toeicengineer","JIS","UTF-8"))."<mail@toeicengineer.sakura.ne.jp>";
 $success = mb_send_mail($to,$subject,$body,"From:".$from);
 
 ?>
@@ -58,11 +57,11 @@ $success = mb_send_mail($to,$subject,$body,"From:".$from);
 <!--<p style="margin-top: 200px">-->
 <?php
 if ($success) {
-	echo "<h1  style=\"font-size: large;background-color:aqua;\">送信しました</h1>";
-	echo "<p>$subject</p>";
-	echo "<p>$body</p>";
+	print "<h1  style=\"font-size: large;background-color:aqua;\">送信しました</h1>";
+	print "<p>$subject</p>";
+	print "<p>$body</p>";
 } else {
-	echo "<h1>送信失敗</h1>";
+	print "<h1>送信失敗</h1>";
 }
 ?>
 </p>
