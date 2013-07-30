@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="./scripts/input.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>登録サンプル</title>
+</head>
+
+<body>
+<div id="wrap">
+<div id="head">
+<h1>ユーザー登録</h1>
+</div>
+
+<div id="content">
+<p>情報を記入してください。</p>
+<form id="frmInput" name="frmInput" method="post" action="input_do.php">
+  <dl>
+  <dt>
+    <label for="id">ID</label>
+  </dt>
+  <dd>
+    <input name="uid" type="text" id="uid" size="10" maxlength="10"  class="valid required" data-pattern="[0-9]{10}" />
+  </dd>
+  <dt>
+    <label for="user_name">名前</label>
+  </dt>
+  <dd>
+    <input name="user_name" type="text" id="user_name" size="35"  class="valid required"  maxlength="255" />
+  </dd>
+  <dt>
+    <label for="password">パスワード</label>
+  </dt>
+  <dd>
+    <input name="password" type="text" id="password" size="35" maxlength="255" />
+  </dd>
+  
+  <input  type="submit" value="登録する" disabled="false"/>
+</form>
+</div>
+
+<div id="foot">
+<p><img src="images/txt_copyright.png" width="136" height="15" alt="(C) H2O Space. MYCOM" /></p>
+</div>
+
+</div>
+</body>
+</html>
