@@ -1,25 +1,7 @@
 <?php
 mb_language("japanese");
 mb_internal_encoding("UTF-8");
-//$_POST['name属性']で値を取得
-if (isset($_POST['send'])) {
-	//宛先メアド
-	$to = $_POST['emailHeader']."@".$_POST['emailFooter'];
-	//件名
-	$subject = $_POST['subject'];
-	//送信内容
-	$message = $_POST['message'];
-	$from = mb_encode_mimeheader(mb_convert_encoding("toeicengineer","JIS","UTF-8"))."<mail@toeicengineer.sakura.ne.jp>";
-	//送信
-	$success = mb_send_mail($to,$subject,$message,"From:".$from);
-}
-if (isset($_POST['rewrite'])) {
-	//やり直し
-	header("location: http://toeicengineer.sakura.ne.jp/prg/mailForm.html");
-	//header("location: http://toeicengineer.sakura.ne.jp/test/mailForm.html");
-	exit();
-}
- 
+//$_POST['name属性']
 if(empty($_POST['emailHeader'])) {
     print "<html>";
     print "<head>";
@@ -49,6 +31,11 @@ if(empty($_POST['emailFooter'])) {
 }
 
 
+$to = $_POST['emailHeader']."@".$_POST['emailFooter'];
+$subject = $_POST['subject'];
+$body = $_POST['message'];
+$from = mb_encode_mimeheader(mb_convert_encoding("toeicengineer","JIS","UTF-8"))."<mail@toeicengineer.sakura.ne.jp>";
+$success = mb_send_mail($to,$subject,$body,"From:".$from);
 
 ?>
 <!DOCTYPE html>
@@ -72,7 +59,7 @@ if(empty($_POST['emailFooter'])) {
 if ($success) {
 	print "<h1  style=\"font-size: large;background-color:aqua;\">送信しました</h1>";
 	print "<p>$subject</p>";
-	print "<p>$message</p>";
+	print "<p>$body</p>";
 } else {
 	print "<h1>送信失敗</h1>";
 }
