@@ -1,0 +1,92 @@
+﻿#AboutMe{
+	/*clear:both;*/
+	/*clear:left;*/
+	float:left;
+	background-color:white;
+	width:375px;
+	height:240px;
+	margin: 0 0 0 0;
+	
+	/*border-left:10px solid #ccc;*/
+	/*border-right:3px dashed #ccc;*/
+	/*border-top:3px dashed #ccc;*/
+	border-bottom:3px dashed #ccc;
+	/*
+	border: 1px solid blue;
+	*/
+}
+#AboutMe h1{
+	/*border-left:1px solid #ccc;*/
+	/*border-right:3px dashed #ccc;*/
+	/*border-top:3px dashed #ccc;*/
+	/*width:300px;*/
+	font-size:27px;
+	border-bottom:3px dashed #ccc;
+	margin:5px;
+}
+
+#AboutMe p{
+	/*border-left:1px solid #ccc;*/
+	/*border-right:3px dashed #ccc;*/
+	/*border-top:3px dashed #ccc;*/
+	/*width:300px;*/
+	font-size:15px;
+	/*border-bottom:3px dashed #ccc;*/
+	margin:0px;
+}
+
+
+#Photo{
+	float:left;
+	background-color:white;
+	width:500px;
+	height:235px;
+	margin: 0 0 0 0;
+	/*border: 3px solid red;*/
+	/*border-left:10px solid #ccc;*/
+	/*border-right:3px dashed #ccc;*/
+	/*border-top:3px dashed #ccc;*/
+	border-bottom:3px dashed #ccc;
+	margin:5px;
+}
+
+
+#ToeicResume{
+	/*clear:both;*/
+	/*clear:left;*/
+	float:left;
+	background-color:white;
+	width:595px;
+	/*width:550px;*/
+	height:620px;
+	margin: 0 0 0 0;
+	/*border: 1px solid blue;*/
+}
+
+#ToeicResume h1{
+	/*width:200px;*/
+	font-size:27px;
+	border-bottom:3px dashed #ccc;
+}
+
+#ToeicResume p{
+	background-color: lime;
+}
+
+#ToeicResume table{
+	border:0;
+}
+
+
+#Ad{
+	float:left;
+	background-color:white;
+	width:295px;
+	height:620px;
+	/*margin: 30px 0px 0px 0px;*/
+	/*border: 1px solid lime;*/
+}
+
+footer{
+	clear:both;
+}

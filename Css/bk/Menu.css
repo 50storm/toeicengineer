@@ -8,7 +8,7 @@
 			padding: 0;
 			/*background: darkcyan;*/
 			/*border-bottom: 5px solid #535d09;*/
-			border-bottom:inset 5px blue;
+			border-bottom:inset 5px blue;*;
 			border-radius: 3px 3px 0 0;
 			color: white;
 		}
