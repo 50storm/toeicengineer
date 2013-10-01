@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connection>
+<dsn>mysql:dbname=toeicengineer_db;host=localhost</dsn>
+<user>toeicengineer</user>
+<password>abc</password>
+</connection>
