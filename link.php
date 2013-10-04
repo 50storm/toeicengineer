@@ -56,7 +56,7 @@
 	
 	</div>
 	<div id="leftSpace">
-		<p>広告スペース</p>
+		<p></p>
 	</div>
 	<div id="link">
 		<table id="linkTable">
@@ -87,27 +87,27 @@
 				<td><a href="http://www.nikkei.com/" target="_blank" title="日系">日経新聞</a></td>
 			</tr>
 			<tr>
-				<td>Search engines</td>
+				<td>検索サイト</td>
 				<td><a href="http://www.google.co.jp/webhp?rls=ig" target="_blank">Google</a></td>
 			</tr>
 			<tr>
-				<td>Search engines</td>
+				<td>検索サイト</td>
 				<td><a href="http://www.yahoo.co.jp/" target="_blank">Yahoo Japan</a></td>
 			</tr>
 			<tr>
-				<td>Search engines</td>
+				<td>検索サイト</td>
 				<td><a href="http://jp.msn.com/" target="_blank">Msn Japan</a></td>
 			</tr>
 			<tr>
-				<td>Search engines</td>
+				<td>検索サイト</td>
 				<td><a href="http://www.livedoor.com/" target="_blank">Livedoor</a></td>
 			</tr>
 			<tr>
-				<td>Search engines</td>
+				<td>検索サイト</td>
 				<td><a href="http://www.goo.ne.jp/" target="_blank">goo</a></td>
 			</tr>
 			<tr>
-				<td>Search engines</td>
+				<td>検索サイト</td>
 				<td><a href="http://www.naver.jp/" target="_blank">NAVER</a></td>
 			</tr>
 			<tr>
@@ -172,19 +172,19 @@
 				<td><a href="http://www.flickr.com/" target="_blank">flicker</a></td>
 			</tr>
 			<tr>
-				<td>IT information sites</td>
+				<td>ITトレンド</td>
 				<td><a href="http://www.atmarkit.co.jp/" target="_blank">@IT</a></td>
 			</tr>
 			<tr>
-				<td>IT information sites</td>
+				<td>ITトレンド</td>
 				<td><a href="http://itpro.nikkeibp.co.jp/" target="_blank">IT Pro</a></td>
 			</tr>
 			<tr>
-				<td>IT information sites</td>
+				<td>ITトレンド</td>
 				<td><a href="http://engineer.typemag.jp/" target="_blank">エンジニアType</a></td>
 			</tr>
 			<tr>
-				<td>IT information sites</td>
+				<td>ITトレンド</td>
 				<td><a href="http://it-trend.jp/" target="_blank">ITトレンド</a></td>
 			</tr>
 			<tr>
@@ -208,105 +208,105 @@
 				<td><a href="https://www.worldtalk.jp/" target="_blank">ワールドトーク</a></td>
 			</tr>
 			<tr>
-				<td>Online shopping site</td>
+				<td>オンラインモール</td>
 				<td><a href="http://www.amazon.co.jp/">amazon.co.jp</a></td>
 			</tr>
 			<tr>
-				<td>Online shopping site</td>
+				<td>オンラインモール</td>
 				<td><a href="http://www.rakuten.co.jp/" target="_blank">楽天</a></td>
 			</tr>
 			<tr>
-				<td>Online shopping site</td>
+				<td>オンラインモール</td>
 				<td><a href="http://shopping.yahoo.co.jp/" target="_blank">Yahoo ショッピング</a></td>
 			</tr>
 			<tr>
-				<td>Online shopping site</td>
+				<td>オンラインモール</td>
 				<td><a href="http://www.dena-ec.com/" target="_blank">Dena Shopping</a></td>
 			</tr>
 			<tr>
-				<td>Online shopping site</td>
+				<td>オンラインモール</td>
 				<td><a href="http://www.aeonshop.com/index.html" target="_blank">イオン　ショップ</a></td>
 			</tr>
 			<tr>
-				<td>Free mail</td>
+				<td>メール</td>
 				<td><a href="http://www.freeml.com/" target="_blank">Freeml</a></td>
 			</tr>
 			<tr>
-				<td>Free mail</td>
+				<td>メール</td>
 				<td><a href="http://www.mail.com/int/" target="_blank">mail.com</a></td>
 			</tr>
 		
 			<tr>
-				<td>Free mail</td>
+				<td>メール</td>
 				<td><a href="https://gmail.google.com/" target="_blank">Gmail</a></td>
 			</tr>
 			<tr>
-				<td>Free soft</td>
+				<td>フリーソフト</td>
 				<td><a href="http://ja.poderosa.org/index.html">Poderosa(ポデローサ)</a></td>
 			</tr>
 			<tr>
-				<td>Free soft</td>
+				<td>フリーソフト</td>
 				<td><a href="http://www.forest.impress.co.jp/library/software/cajamarcaeye/download_10807.html">カハマルカの瞳(簡易キャプチャレコーダー)</a></td>
 			</tr>
 			<tr>
-				<td>Free soft</td>
-				<td><a href="http://freesoft-100.com/" target="_blank">free soft 100</a></td>	
+				<td>フリーソフト</td>
+				<td><a href="http://freesoft-100.com/" target="_blank">フリーソフト 100</a></td>	
 			</tr>
 			<tr>
-				<td>Free soft</td>
+				<td>フリーソフト</td>
 				<td><a href="http://notepad-plus-plus.org/" target="_blank">Notepad++本家サイト</a></td>
 			</tr>
 			<tr>
-				<td>Free soft</td>
+				<td>フリーソフト</td>
 				<td><a href="http://www.crystal-creation.com/software/technical-information/tool/editor/notepad-plus/" target="_blank">Notepad++の使用方法</a></td>
 			</tr>
 			<tr>
-				<td>Matome</td>
-				<td><a href="http://matome.naver.jp/odai/2131600405413155201" target="_blank">英英辞典まとめ</a></td>
+				<td>まとめ</td>
+				<td><a href="http://まとめ.naver.jp/odai/2131600405413155201" target="_blank">英英辞典まとめ</a></td>
 			</tr>
 			<tr>
-				<td>Matome</td>
-				<td><a href="http://matome.naver.jp/odai/2131471255391732701" target="_blank" >システム開発にお役立ちフリーソフトまとめてみました</a></td>
+				<td>まとめ</td>
+				<td><a href="http://まとめ.naver.jp/odai/2131471255391732701" target="_blank" >システム開発にお役立ちフリーソフトまとめてみました</a></td>
 			</tr>
 			<tr>
-				<td>Matome</td>
-				<td><a href="http://matome.naver.jp/odai/2131556784006652701" target="_blank" >英語の資格まとめてみました。</a></td>
+				<td>まとめ</td>
+				<td><a href="http://まとめ.naver.jp/odai/2131556784006652701" target="_blank" >英語の資格まとめてみました。</a></td>
 			</tr>
 			<tr>
-				<td>Sites for Programmer</td>
+				<td>プログラミング</td>
 				<td><a href="http://www.openspc2.org/reibun/JavaScript_technique/" target="_blank" >JavaScript テクニックブック</a></td>
 			</tr>
 			<tr>
-				<td>Sites for Programmer</td>
+				<td>プログラミング</td>
 				<td><a href="http://coffeescript.org/" target="_blank" >CoffeeScript本家</a></td>
 			</tr>
 			<tr>
-				<td>Sites for Programmer</td>			
+				<td>プログラミング</td>			
 				<td><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20120620/404226/" target="_blank" >CoffeeScriptって何？</a></td>
 			</tr>
 			<tr>
-				<td>Sites for Programmer</td>
+				<td>プログラミング</td>
 				<td><a href="http://phpmentors.jp/" target="_blank" >php メンターズ</a></td>
 			</tr>
 			<tr>
-				<td>Sites for Programmer</td>
+				<td>プログラミング</td>
 				<td><a href="http://homepagelecture.web.fc2.com/" target="_blank" >いまさらHTML,CSS入門講座</a></td>
 			</tr>
 			<tr>
-				<td>Sites for Programmer</td>
+				<td>プログラミング</td>
 				<td><a href="http://hprakuraku.web.fc2.com/" target="_blank" >ホームページの作り方</a></td>
 			</tr>
 			<tr>
-				<td>Sites for Programmer</td>
-				<td><a href="http://matome.naver.jp/odai/2130882659276553201" target="_blank" >コマンドライン操作まとめ</a></td>
+				<td>プログラミング</td>
+				<td><a href="http://まとめ.naver.jp/odai/2130882659276553201" target="_blank" >コマンドライン操作まとめ</a></td>
 			</tr>
 			<tr>
-				<td>Sites for Programmer</td>
+				<td>プログラミング</td>
 				<td><a href="http://ascii.jp/elem/000/000/438/438206/" target="_blank" >jQuery UI サンプル</a></td>
 			</tr>
 			<tr>
-				<td>Sites for Programmer</td>
-				<td><a href="http://matome.naver.jp/odai/2132851038557722801" target="_blank" >jQueryでTable</a></td>
+				<td>プログラミング</td>
+				<td><a href="http://まとめ.naver.jp/odai/2132851038557722801" target="_blank" >jQueryでTable</a></td>
 			</tr>
 			<tr>
 				<td>SEO</td>
@@ -317,86 +317,86 @@
 				<td><a href="http://seocheki.net/" target="_blank" >SEOチェキ</a></td>
 			</tr>
 			<tr>
-				<td>Personal Links</td>
+				<td></td>
 				<td><a href="http://iga1128.wix.com/toeicengineer" target="_blank">WIXでHTML５ホームページを楽々作成</a></td>
 			</tr>
 			<tr>
-				<td>Personal Links</td>
+				<td>自作プログラム</td>
 				<td><a href="./prg/mailForm.html" target="_blank" >メールメモ</a></td>
 			</tr>
 			<tr>
-				<td>Personal Links</td>
-				<td><a href="http://matome.naver.jp/odai/2133595365976855601" target="_blank" >TOEICer Blogs!</a></td>
+				<td></td>
+				<td><a href="http://まとめ.naver.jp/odai/2133595365976855601" target="_blank" >TOEICer Blogs!</a></td>
 			</tr>
 			<tr>
-				<td>Personal Links</td>
+				<td></td>
 				<td><a href="https://www.facebook.com/groups/479377392081229/" target="_blank" >新宿コミュニケーションクラブ</a></td>
 			</tr>
 			<tr>
-				<td>Personal Links</td>
+				<td>ツール</td>
 				<td><a href="http://chosuke.rumix.jp/" target="_blank">ちょー助</a></td>
 			</tr>
 			<tr>
-				<td>Personal Links</td>
+				<td></td>
 				<td><a href="http://www.lancers.jp/" target="_blank">Lancers</a></td>
 			</tr>
 			<tr>
-				<td>Personal Links</td>
+				<td>ツール</td>
 				<td><a href="https://www.datadeliver.net/" target="_blank">データ便</a></td>
 			</tr>
 			<tr>
-				<td>Personal Links</td>
+				<td></td>
 				<td><a href="http://weblearningplaza.jst.go.jp/" target="_blank">Ｗｅｂラーニングプラザ</a></td>
 			</tr>
 			<tr>
-				<td>Personal Links</td>
+				<td></td>
 				<td><a href="http://dotinstall.com/" target="_blank">どっといんすとーる</a></td>
 			</tr>
 			<tr>
-				<td>Asorted Site by Toeic Engineer</td>
+				<td></td>
 				<td><a href="http://store.jp/" target="_blank" >Store.jp</a></td>
 			</tr>
 			<tr>
-				<td>Asorted Site by Toeic Engineer</td>
+				<td></td>
 				<td><a href="http://zerostore.jp/" target="_blank" >zero store</a></td>
 			</tr>
 			<tr>
-				<td>Asorted Site by Toeic Engineer</td>
+				<td></td>
 				<td><a href="https://thebase.in/" target="_blank" >thebase</a></td>
 			</tr>
 			<tr>
-				<td>Asorted Site by Toeic Engineer</td>
+				<td></td>
 				<td><a href="http://www.gmt.ne.jp/onlineshop/" target="_blank" >ゼロ　ショップ</a></td>
 			</tr>
 			<tr>
-				<td>Asorted Site by Toeic Engineer</td>
+				<td></td>
 				<td><a href="http://liginc.co.jp/" target="_blank" >LIG</a></td>
 			</tr>
 			<tr>
-				<td>Asorted Site by Toeic Engineer</td>
+				<td>検索サイト</td>
 				<td><a href="http://jp.hao123.com/?tn=sft_hp_hao123_jp" target="_blank" >Hao123</a></td>
 			</tr>
 			<tr>
-				<td>Asorted Site by Toeic Engineer</td>
+				<td>ツール</td>
 				<td><a href="https://live.cybozu.co.jp/" target="_blank">サイボウズLive</a></td>
 			</tr>
 			<tr>
-				<td>Asorted Site by Toeic Engineer</td>
+				<td></td>
 				<td><a href="http://www.lifehacker.com/">Lifehacker</a></td>
 			</tr>
 			<tr>
-				<td>Asorted Site by Toeic Engineer</td>
+				<td></td>
 				<td><a href="http://www.lifehacker.jp/">Lifehacker[日本語版]</a></td>
 			</tr>
 			<tr>
-				<td>Asorted Site by Toeic Engineer</td>
+				<td>ツール</td>
 				<td><a href="http://www.teglet.co.jp/">TEGLET</a></td>
 			</tr>
 			</tbody>
 		</table>
 	</div>
 	<div id="rightSpace">
-		<p>広告スペース</p>
+		<p></p>
 	</div>
 
 	<!--

@@ -1,13 +1,16 @@
 #leftSpace{
 	float:left;
 	width:150px;
+	/*
 	background-color:#CCFFFF;
-}
+*/
+	}
 #rightSpace{
 	float:left;
 	width:150px;
+	/*
 	background-color:gray;
-
+*/
 }
 #link{
 	float:left;
