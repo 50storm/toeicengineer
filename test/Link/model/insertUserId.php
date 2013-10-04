@@ -4,17 +4,21 @@ if ($_SERVER['HTTP_HOST'] == 'localhost'){
 	$dsn      = 'mysql:dbname=toeicengineer_db;host=localhost';
 	$user     = 'toeicengineer';
 	$password = 'abc';
+	var_dump($dsn);
+	var_dump($user);
+	var_dump($password);
+	
 }else{
 	$dsn      ='mysql:dbname=toeicengineer_db;host=mysql464.db.sakura.ne.jp';
 	$user     ='toeicengineer';
 	$password ='hiro1128';
 }
 
-
-$pdo = new PDO($dsn, $user, $password);
-$stmt = $pdo->prepare(
-					"INSERT INTO UserId(email, userId, password)VALUES(:email, :userId, :password);"
-					);
+try{
+	$pdo = new PDO($dsn, $user, $password);
+	$stmt = $pdo->prepare(
+						"INSERT INTO UserId(email, userId, password)VALUES(:email, :userId, :password);"
+						);
 
 $UserId_email = $_SESSION['email'];
 $UserId_userId = $_SESSION['userId'];
@@ -25,7 +29,11 @@ $stmt->bindParam(":userId", $UserId_userId);
 $stmt->bindParam(":password", $UserId_password);
 $stmt->execute();
 
+}catch(PDOException $e){
+	echo $e->getMessage();
+	 exit;
 
+}
 $host  = $_SERVER['HTTP_HOST'];
 $uri   = rtrim(dirname(dirname($_SERVER['PHP_SELF']))).'/'.'view';
 $extra = 'myPage.php';

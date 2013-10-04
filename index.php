@@ -8,7 +8,7 @@
 <meta name="keywords" content="TOEIC,エンジニア" /> 
 <meta name="description" content="TOEIC950点(リスニグ満点)わすれっぽいエンジニアのHP"/>
 <meta name="robots" content="index,follow"/>
- <meta name="viewport" content="width=device-width ">
+<meta name="viewport" content="width=device-width ">
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">
 	google.load("jquery", "1.6.1");
