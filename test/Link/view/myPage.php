@@ -3,9 +3,14 @@
 //http://www.php-labo.net/tutorial/class/pdo.html
 require_once('../Class/Utility.php');
 $objUtility = new Utility();
-
 session_start();
-
+//SESSIONにemailがなければログインしてないとする
+if(empty($_SESSION['email'])){
+	echo "ログインしてください";
+	$uri=Utility::makeUrlController('view_controller.php?page=login');
+	header("Location: $uri");
+	exit;
+}
 //echo $_SESSION['email'];
 mb_language("japanese");
 mb_internal_encoding("UTF-8");
@@ -21,7 +26,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost'){
 }
 //var_dump($dsn);
 //ブックマーク登録
-$page_bookmark =$objUtility->makeUrlController('view_controller.php?page=insUrl');
+$page_bookmark =$objUtility->makeUrlController('view_controller.php?page=insertUrl');
 //ユーザーID変更
 $page_config   =$objUtility->makeUrlController('view_controller.php?page=updUserId');
 //表示名を変更

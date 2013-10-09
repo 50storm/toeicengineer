@@ -1,8 +1,12 @@
 <?php
+//変更履歴
+//change history
+//Date:2013/10/07
+//	   changed validater with model
 
 session_start();
 require_once('../Class/Utility.php');
-$objUtility = new Utility();
+//$objUtility = new Utility();
 
 if (isset($_COOKIE['email'])){
 	//$email = $_COOKIE["email"];
@@ -62,6 +66,7 @@ if (empty($_POST['password'])){
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='../css/com.css' />  
 <style>
 #divEmail{
 /*
@@ -152,10 +157,11 @@ if (empty($_POST['password'])){
 <body>
 <div id="wrap">
 	<div id="head">
+		<h1>ログイン画面</h1>
 	</div>
 	<div id="content">
-	
-		<form id="frmInput" name="frmInput" method="post" action="../validater/validateLogin.php?page=login">
+		<!--replaced validater with model-->
+		<form id="frmInput" name="frmInput" method="post" action="../model/login.php">
 	
 	<!--
 		<form id="frmInput" name="frmInput" method="post" action="Login.php">
@@ -170,7 +176,7 @@ if (empty($_POST['password'])){
 				<input id="login"  type="submit" value="ログイン" />
 			</div>
 			<div id="msg">
-				<p><?php echo $objUtility->h($msg); ?></p>
+				<p><?php echo Utility::h($msg); ?></p>
 			</div>
 		</form>
 	</div>

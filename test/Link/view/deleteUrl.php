@@ -16,7 +16,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost'){
 
 $pdo = new PDO($dsn, $user, $password);
 $stmt =$pdo->prepare("SELECT * FROM toeicengineer_db.link WHERE seq =:seq");
-$seq=$_SESSION['seq'];
+$seq=$_SESSION['seq'];//キー
 $stmt->bindParam(":seq", $seq);
 $stmt->execute();
 $row=$stmt->fetch();
@@ -25,6 +25,7 @@ $row=$stmt->fetch();
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='../css/com.css' />
 <style>
 div.input {
 					display: block;
@@ -39,34 +40,33 @@ label.input{
 		float: left;
 		clear: none;
 		text-align: right;
-		background-color:white;
+		/*background-color:white;*/
 		width:100px;
 		}
 
 </style>
-<title>登録サンプル</title>
+<title>Bookmar削除</title>
 </head>
 <body>
 <div id="wrap">
 	<div id="head">
-		<h1>表示名変更</h1>
+		<h1>BookMark削除</h1>
 	</div>
 	<div id="content">
-		<h2>表示名を入力。</h2>
-		<form id="frmInput" name="frmInput" method="post" action="../validater/validatedelUrl.php">
+		<h2>一度削除すると、元に戻せません。</h2>
+		<form id="frmInput" name="frmInput" method="post" action="../model/deleteUrl.php">
 			<div class="input">
 				<label for="url" class="input" >URL</label>
-				<input name="url" type="text" id="url" value="<?php echo $row['url'] ?>" readonly />
+				<input name="url" type="text" id="url" value="<?php echo $row['url']; ?>" readonly />
 			</div>
 			<div class="input">
 				<label for="name" class="input" >表示名</label>
-				<input name="name" type="text" id="name" size="35" value="<?php $row['name'] ?>"  readonly "/>
+				<input name="name" type="text" id="name" size="35" value="<?php echo $row['name'];?> "  readonly />
 			</div>
 			<div class="input">
 				<label for="tag" class="input">タグ</label>
-				<input name="tag" type="text" id="tag" size="35" value="<?php $row['tag'] ?>"  readonly "/>
+				<input name="tag" type="text" id="tag" size="35" value="<?php echo $row['tag']; ?>"  readonly />
 			</div>
-			<br/>
 			<div>
 				<input  type="submit" value="削除" />
 			</div>

@@ -10,7 +10,7 @@ $objUtility = new Utility();
 
 
 /****
-JavaScriptでやる
+//TODO JavaScriptでやる
 ***/
 $flgErr=false;
 $errMsg="";

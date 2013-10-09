@@ -13,6 +13,7 @@ else
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='../css/com.css' />
 <style>
 div.input {
 					display: block;
@@ -27,7 +28,7 @@ label.input{
 		float: left;
 		clear: none;
 		text-align: right;
-		background-color:white;
+		/*background-color:white;*/
 		width:100px;
 		}
 
@@ -41,7 +42,10 @@ label.input{
 	</div>
 	<div id="content">
 		<h2>ブックマークでするメールアドレスとIDとパスワードを記入してください。</h2>
+		<form id="frmInput" name="frmInput" method="post" action="../model/insertUserId.php">
+		<!--
 		<form id="frmInput" name="frmInput" method="post" action="../validater/validateUserId.php">
+		-->
 			<div class="input">
 				<label for="email" class="input" >メールアドレス</label>
 				<input name="email" type="text" id="email" value=""/>
@@ -52,7 +56,7 @@ label.input{
 			</div>
 			<div class="input">
 				<label for="password" class="input">パスワード</label>
-				<input name="password" type="text" id="password" size="35" />
+				<input name="password" type="password" id="password" size="35" />
 			</div>
 			<br/>
 			<div class="input">

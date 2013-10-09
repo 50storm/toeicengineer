@@ -2,14 +2,29 @@
 session_start();
 mb_language("japanese");
 mb_internal_encoding("UTF-8");
-/*
-$url = $_POST['url'];
-$name = $_POST['name'];
-$label = $_POST['label'];
-$memo =$_POST['memo'];
-$tooltips = $_POST['tooltips'];
-*/
+require_once('../Class/Utility.php');
+//チェック
+$flgErr=false;
+$errMsg="";
+if (empty($_POST['url'])) {
+	$flgErr=true;
+	$errMsg='URLが入力されていません。';
+}
 
+if (empty($_POST['name'])) {
+	$flgErr=true;
+	$errMsg='表示名が入力されていません。';
+}
+
+//エラーがあればView画面に戻す
+if ($flgErr==true){
+	$_SESSION['msg']=$errMsg;
+	$Uri=Utility::makeUrlController('view_controller.php?page=insertUrl');
+	header("Location: $Uri");
+	exit;
+}else{
+	$_SESSION['msg']="";
+}
 
 
 if ($_SERVER['HTTP_HOST'] == 'localhost'){
@@ -24,50 +39,44 @@ if ($_SERVER['HTTP_HOST'] == 'localhost'){
 
 
 
-$pdo = new PDO($dsn, $user, $password);
+try{
+	$pdo = new PDO($dsn, $user, $password);
+	//Step1
+	$stmt = $pdo->prepare(
+			"INSERT INTO Link(email, url, name, tag) VALUES(:email, :url, :name, :tag)"
+	);
+	
+	$SqlParam = array('url' => '','name' => '', 'tag' =>'');
+	$SqlParam["url"]   = $_POST['url'];
+	$SqlParam["name"]  = $_POST['name'];
+	//タグがなければタグなしをセット
+	if (empty($_POST['tag'])) {
+		$SqlParam["tag"]   = "タグなし";
+	}else{
+		$SqlParam["tag"]   = $_POST['tag'];
+	}
 
-//Step1
-$stmt = $pdo->prepare(
-		"INSERT INTO Link(email, url, name, tag) VALUES(:email, :url, :name, :tag)"
-);
-
-$SqlParam = array('url' => '','name' => '', 'tag' =>'');
-$SqlParam["url"]   = $_SESSION['url'];
-$SqlParam["name"]  = $_SESSION['name'];
-$SqlParam["tag"]   = $_SESSION['tag'];
-
-$email  =  $_SESSION['email'];
-$url    =  $SqlParam["url"];
-$name   =  $SqlParam["name"];
-$tag    =  $SqlParam["tag"];
-
-$stmt->bindParam(":email", $email);
-$stmt->bindParam(":url", $url);
-$stmt->bindParam(":name", $name);
-$stmt->bindParam(":tag", $tag);
-$stmt->execute();
-
-
-redirectTo(makeUrl('view_controller.php?page=myPage'));
-
-/*
-関数
-*/
-function makeUrl($file){
-	$Url='';
-
-	$host  = $_SERVER['HTTP_HOST'];
-	$uri   = rtrim(dirname(dirname($_SERVER['PHP_SELF']))).'/'.'controller';
-	$Url = "http://".$host.$uri."/".$file;
-	return $Url;
-}
-
-function redirectTo($Uri){
-	header("Location: $Uri");
+	$email  =  $_SESSION['email'];
+	$url    =  $SqlParam["url"];
+	$name   =  $SqlParam["name"];
+	$tag    =  $SqlParam["tag"];
+	
+		var_dump($SqlParam);
+		var_dump($email);
+	$stmt->bindParam(":email", $email);
+	$stmt->bindParam(":url", $url);
+	$stmt->bindParam(":name", $name);
+	$stmt->bindParam(":tag", $tag);
+	$stmt->execute();
+}catch(PDOException $e){
+	echo $e->getMessage();
 	exit;
+
 }
-?>
 
 
+$Uri=Utility::makeUrlController('view_controller.php?page=myPage');
+header("Location: $Uri");
+exit;
 
 ?>

@@ -31,6 +31,7 @@ $row=$stmt->fetch();
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='../css/com.css' />
 <style>
 div.input {
 					display: block;
@@ -45,7 +46,7 @@ label.input{
 		float: left;
 		clear: none;
 		text-align: right;
-		background-color:white;
+		/*background-color:white;*/
 		width:100px;
 		}
 

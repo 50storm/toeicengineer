@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='../css/com.css' />
 <style>
 div.input {
 					display: block;
@@ -16,7 +17,7 @@ label.input{
 		float: left;
 		clear: none;
 		text-align: right;
-		background-color:white;
+		/*background-color:white;*/
 		width:100px;
 		}
 
@@ -30,7 +31,7 @@ label.input{
 	</div>
 	<div id="content">
 		<h2>リンクを記入してください。</h2>
-		<form id="frmInput" name="frmInput" method="post" action="../validater/validateUrl.php">
+		<form id="frmInput" name="frmInput" method="post" action="../model/insertUrl.php">
 			<div class="input">
 				<label for="url" class="input" >URL</label>
 				<input name="url" type="text" id="url" />
