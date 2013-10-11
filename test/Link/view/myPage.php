@@ -30,7 +30,7 @@ $page_bookmark =$objUtility->makeUrlController('view_controller.php?page=insertU
 //ユーザーID変更
 $page_config   =$objUtility->makeUrlController('view_controller.php?page=updUserId');
 //表示名を変更
-$page_updUrl   = $objUtility->makeUrlController('view_controller.php?page=updUrl');
+$page_updUrl   = $objUtility->makeUrlController('view_controller.php?page=updateUrl');
 //削除
 $page_delUrl   = $objUtility->makeUrlController('view_controller.php?page=delUrl');
 //$uri           = rtrim(dirname(dirname($_SERVER['PHP_SELF']))).'/view/myPage.php';

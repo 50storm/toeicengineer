@@ -21,9 +21,9 @@ if (isSet($_GET['page'])){
 		header("Location: ".makeUrl('insertUrl.php'));
 		exit;
 	//ブックマークの表示名を登録
-	case 'updUrl':
+	case 'updateUrl':
 		$_SESSION['seq']=$_GET['seq'];
-		header("Location: ".makeUrl('updUrl.php'));
+		header("Location: ".makeUrl('updateUrl.php'));
 		exit;
 	case 'delUrl':
 		$_SESSION['seq']=$_GET['seq'];

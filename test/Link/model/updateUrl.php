@@ -4,18 +4,32 @@ mb_language("japanese");
 mb_internal_encoding("UTF-8");
 
 var_dump($_POST);
-
+require_once('../Class/Utility.php');
+//チェック
+$flgErr=false;
+$errMsg="";
 //チェック
 if (empty($_POST['url'])) {
-	print('urlが入力されていません。');
-	exit();
+	$flgErr=true;
+	$errMsg='URLが入力されていません。';
 }
 
 
 if (empty($_POST['name'])) {
-	print('表示名が入力されていません。');
-	exit();
+	$flgErr=true;
+	$errMsg='表示名が入力されていません。';
 }
+
+//エラーがあればView画面に戻す
+if ($flgErr==true){
+	$_SESSION['msg']=$errMsg;
+	$Uri=Utility::makeUrlController('view_controller.php?page=updateUrl');
+	header("Location: $Uri");
+	exit;
+}else{
+	$_SESSION['msg']="";
+}
+
 
 if (empty($_POST['tag'])) {
 	$_SESSION['tag']="タグなし";
@@ -35,36 +49,46 @@ if ($_SERVER['HTTP_HOST'] == 'localhost'){
 	$password ='hiro1128';
 }
 
-$pdo = new PDO($dsn, $user, $password);
+try{
+	$pdo = new PDO($dsn, $user, $password);
+	
+	$stmt = $pdo->prepare(
+			"UPDATE toeicengineer_db.link 
+			set 
+				url=:url,
+				name=:name,
+				tag=:tag 
+			where seq =:seq"
+	);
+	
+	//$seq       = $_SESSION['seq'];
+	//$url       = $_SESSION['url'];
+	//$name      = $_SESSION['name'];
+	//$tag       = $_SESSION['tag'];
+	
+	$seq       = $_SESSION['seq'];
+	$url       = $_POST['url'];
+	$name      = $_POST['name'];
+	$tag       = $_POST['tag'];
+	
+	$stmt->bindParam(":seq"  , $seq);
+	$stmt->bindParam(":url"  , $url);
+	$stmt->bindParam(":name" , $name);
+	$stmt->bindParam(":tag"  , $tag);
+	$stmt->execute();
+}catch(PDOException $e){
+	echo $e->getMessage();
+	exit;
 
-$stmt = $pdo->prepare(
-		"UPDATE toeicengineer_db.link 
-		set 
-			url=:url,
-			name=:name,
-			tag=:tag 
-		where seq =:seq"
-);
+}
 
-//$seq       = $_SESSION['seq'];
-//$url       = $_SESSION['url'];
-//$name      = $_SESSION['name'];
-//$tag       = $_SESSION['tag'];
-
-$seq       = $_SESSION['seq'];
-$url       = $_POST['url'];
-$name      = $_POST['name'];
-$tag       = $_POST['tag'];
-
-$stmt->bindParam(":seq"  , $seq);
-$stmt->bindParam(":url"  , $url);
-$stmt->bindParam(":name" , $name);
-$stmt->bindParam(":tag"  , $tag);
-$stmt->execute();
 
 //マイページへリダイレクト
 //redirectTo(makeUrl('view_controller.php?page=myPage'));
 
+$Uri=Utility::makeUrlController('view_controller.php?page=myPage');
+header("Location: $Uri");
+exit;
 
 /*
 関数
