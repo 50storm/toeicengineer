@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="../Css/Menu.css" type="text/css">
+<link rel="stylesheet" href="../Css/Wrap.css" type="text/css">
+<title>メールメモ</title>
+<style>
+	h2{backGround-color:aqua; width:260px; }
+</style>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+	google.load("jquery", "1.6.1");
+</script>
+<script>
+	$(function(){
+			var intDt ='メモ：';
+			var dt = new Date();
+			intDt+=dt.getFullYear();
+			intDt+='年';
+			intDt+=(dt.getMonth()+1);
+			intDt+='月';
+			intDt+=dt.getDate();
+			intDt+='日';
+			$('#subject').val(intDt);
+			
+			$('#submit').click(function(){
+				//MailAddress Header
+				var eHeader　=　$('#emailHeader').val();
+				if(eHeader==''){
+					//alert('b');
+					$('#emailHeader').css('background-color', 'Lime');
+					return false;
+				}else{
+					$('#emailHeader').css('background-color', 'white');
+				}
+				var eFooter　=　$('#emailFooter').val();
+				if(eFooter==''){
+					//alert('b');
+					$('#emailFooter').css('background-color', 'Lime');
+					return false;
+				}else{
+					$('#emailFooter').css('background-color', 'white');
+				}
+				
+				var subject　=　$('#subject').val();
+				if(subject==''){
+					//alert('b');
+					$('#subject').css('background-color', 'Lime');
+					return false;
+				}else{
+					$('#subject').css('background-color', 'white');
+				}
+				var subject　=　$('#message').val();
+				if(subject==''){
+					//alert('b');
+					$('#message').css('background-color', 'Lime');
+					return false;
+				}else{
+					$('#message').css('background-color', 'white');
+				}
+			})
+	});
+
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+			<h1><strong>TOEIC</strong>950点(リスニグ満点)エンジニアのHP</h1>
+		</div>
+	<div id="menu" >
+			<ul id="dropMenu"  style="">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="http://toeicengineer.blogspot.jp/" target="_blank">Blog</a></li>
+				<li><a href="../link.html" >Link</a></li>
+			</ul>
+		</div>
+	<h2>メールメモ</h2>
+	<form action="mailCheck.php" method="post">
+	<p>
+		<label for="MailAddress" >メールアドレス:</label>
+		<input name="emailHeader" type="text" id="emailHeader" size="10" value="" maxlength="255" />
+		<label>@</label>
+		<input name="emailFooter" type="text" id="emailFooter" size="10"  value="" maxlength="255" />
+	</p>
+	<p>
+		<label>件名:</label>
+		<input name="subject" type="text" id="subject" size="50" maxlength="255" />
+	</p>
+	<p>
+		<label>メモ内容</label>
+		<br/>
+		<textarea name="message" id="message" cols="50" rows="10"></textarea>
+	</p>
+	<input type="submit" value="メモる" id="submit" name="send" />
+	</form>
+	<div id="footer" style="clear:both;">
+		<hr>
+		<p>Copyright 2013<strong>Hiroshi Igarashi</strong></p>
+		<a href="http://toeicengineer.blogspot.jp/" target="_blank">TOEIC950点(リスニング満点) わすれっぽいエンジニアブログです。</a>
+	</div>
+</div>
+</body>
+</html>

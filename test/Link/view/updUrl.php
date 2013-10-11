@@ -60,7 +60,7 @@ label.input{
 	</div>
 	<div id="content">
 		<h2>変更内容を入力。</h2>
-		<form id="frmInput" name="frmInput" method="post" action="../validater/validateUpdUrl.php">
+		<form id="frmInput" name="frmInput" method="post" action="../model/updateUrl.php">
 			<div class="input">
 				<label for="url" class="input" >URL</label>
 				<input name="url" type="text" id="url" value="<?php echo $row['url'];?>" />

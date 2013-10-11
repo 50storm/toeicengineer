@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<rss version="2.0"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+ xmlns:content="http://purl.org/rss/1.0/modules/content/"
+ xml:lang="ja">
+	<channel>
+		<title>TOEIC950点(リスニグ満点)エンジニアのHP</title>
+		<link>http://toeicengineer.sakura.ne.jp/</link>
+		<description>TOEIC950点(リスニグ満点)エンジニアのHP</description>
+		<language>ja</language>
+		<copyright>Copyright (c) 2013, [Hiroshi Igarashi]</copyright>
+		<lastBuildDate>Fri, 28 Jun 2013 14:10:19 +0900</lastBuildDate>
+		<generator>http://www.nishishi.com/soft/rssmaker/</generator>
+		<dc:creator></dc:creator>
+		<dc:subject>toeic</dc:subject>
+		<sy:updatePeriod>monthly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+		<!-- ENTRIES -->
+	</channel>
+</rss>
