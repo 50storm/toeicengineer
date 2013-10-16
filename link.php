@@ -1,8 +1,6 @@
 <?php
 session_start();
-//
-//http://codezine.jp/article/detail/433?p=2
-//http://www.php-labo.net/tutorial/class/pdo.html
+
 
 if ($_SERVER['HTTP_HOST'] == 'localhost'){
 	require_once('./Class/Utility.php');
@@ -15,7 +13,6 @@ if ($_SERVER['HTTP_HOST'] == 'localhost'){
 	$user     ='toeicengineer';
 	$password ='hiro1128';
 }
-
 
 /*
 TODO　
@@ -37,7 +34,7 @@ mb_http_output("utf-8");
 
 //var_dump($dsn);
 //ブックマーク登録
-$page_bookmark =Utility::makeUrlController('view_controller.php?page=insertUrl');
+$page_bookmark =Utility::makeUrlController('view_controller.php?page=login&action=insertUrl');
 var_dump($page_bookmark);
 //ユーザーID変更
 $page_config   =Utility::makeUrlController('view_controller.php?page=updUserId');
@@ -154,9 +151,6 @@ if (intVal($stmt_tag->rowCount()) == 0) {
 	}
 }
 
-//var_dump($flgData);
-
-//var_dump($page_bookmark);
 
 //タグ表示用
 $pdo_tag_counter = new  PDO($dsn, $user, $password);
@@ -219,9 +213,9 @@ $row_tag_counter=$stmt_tag_counter->fetch();
 
 /*タグ(ラベル)*/
 #Lables{
-	
 	float:left;
-	border: 1px solid #FFFFFF;
+	width:200px;
+	/*border: 1px solid lime;*/
 }
 /*ブックマーク(リンク)*/
 #link{
@@ -302,7 +296,6 @@ h2{
 	
 	</div>
 	<div id="Lables">
-		<p><a href="<?php echo $page_bookmark  ?>" >ブックマーク登録</a></p>
 		<h2>カテゴリー</h2>
 		<?php if($flgData == false) :?>
 			<p>ブックマークはありません。</p>
@@ -319,6 +312,7 @@ h2{
 				<?php endforeach; ?>
 			</ul>
 		<?php endif ;?>
+		<p><a href="<?php echo $page_bookmark  ?>" >ブックマーク登録</a></p>
 	</div>
 	<div id="link">
 		<?php if($flgData == false) :?>

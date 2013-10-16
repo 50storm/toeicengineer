@@ -4,6 +4,8 @@
   Viewの画面へ飛ばす
 ***************************/
 session_start();
+echo "start";
+var_dump($_GET);
 
 if (isSet($_GET['page'])){
 	switch($_GET['page']){
@@ -35,6 +37,12 @@ if (isSet($_GET['page'])){
 		exit;
 	//ログイン画面
 	case 'login':
+		if($_GET['action']=='insertUrl'){
+			$_SESSION['action']='insertUrl';
+		}else{
+		
+		}
+		var_dump($_SESSION);
 		header("Location: ".makeUrl('login.php'));
 		exit;
 	//ユーザーID登録画面

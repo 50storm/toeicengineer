@@ -1,6 +1,8 @@
 ﻿<?php
-//セッション使う
 session_start();
+var_dump($_POST);
+var_dump($_SESSION);
+
 
 mb_language("japanese");
 mb_internal_encoding("UTF-8");
@@ -22,6 +24,8 @@ if (empty($_POST['password'])) {
 	$flgErr=true;
 	$errMsg='パスワードが入力されていません。';
 }
+
+
 //エラーがあればView画面に戻す
 if ($flgErr==true){
 	$_SESSION['msg']=$errMsg;
@@ -32,11 +36,8 @@ if ($flgErr==true){
 	$_SESSION['msg']="";
 }
 
-//sesssion追加後でやる
-//setcookie("email", $_POST['email'], time()+(60*60*24*30) ,$_SERVER['HTTP_HOST'] ); //30日
-//setcookie("password",$_POST['password'], time()+(60*60*24*30),$_SERVER['HTTP_HOST']  );
-//echo $_COOKIE["email"];
-//echo $_COOKIE["password"];
+
+
 
 
 //emailをセッションで渡す
@@ -46,8 +47,8 @@ $_SESSION['mode']='login';
 
 ///add
 
-$UserId_email    = $_SESSION['email'];
-$UserId_password = $_SESSION['password'];
+$UserId_email    = $_POST['email'];
+$UserId_password = $_POST['password'];
 
 if ($_SERVER['HTTP_HOST'] == 'localhost'){
 	$dsn      = 'mysql:dbname=toeicengineer_db;host=localhost';
@@ -63,16 +64,18 @@ try{
 	$pdo = new PDO($dsn, $user, $password);
 	$sql = "SELECT * FROM toeicengineer_db.userid WHERE email=:email and password=:password";
 	$stmt = $pdo->prepare($sql);
-	$stmt->bindParam(":email", $UserId_email);
-	$stmt->bindParam(":password", $UserId_password);
+	$stmt->bindParam(":email", $_POST['email']);
+	$stmt->bindParam(":password", $_POST['password']);
 	$stmt->execute();
 	$row=$stmt->fetch();
-	
+	var_dump($stmt);
+	var_dump($row);
 	if (intVal($stmt->rowCount())==0){
 		//ログインページに戻る
 		$_SESSION['msg']='ログインできませんでした';
-		$uri=Utility::makeUrlController('view_controller.php?page=login');
-		header("Location: $uri");
+		echo "ログインできませんでした";
+		//$uri=Utility::makeUrlController('view_controller.php?page=login');
+		//header("Location: $uri");
 		exit;
 	}else{
 		//リダイレクト
@@ -82,12 +85,31 @@ try{
 		//$extra = 'myPage.php';
 		$_SESSION['userId'] =$row['userId'];
 		$_SESSION['msg']=   "";
-		$uri=Utility::makeUrlController('view_controller.php?page=myPage');
-		header("Location: $uri");
+		echo "ログインOK";
+		switch($_SESSION['action']){
+		case 'insUserId'://insert userId
+		
+		
+		case 'insUrl':
+		
+		
+		case 'updUrl':
+		
+		
+		case 'delUrl':
+		
+		
+		
+		
+		
+		}
+		//$uri=Utility::makeUrlController('view_controller.php?page=myPage');
+		//header("Location: $uri");
 		exit;
 	}
 }catch(PDOException $e){
 	echo $e->getMessage();
 	exit;
 }
-?>
+
+
