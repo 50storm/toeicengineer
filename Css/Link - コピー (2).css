@@ -1,23 +1,17 @@
 #leftSpace{
 	float:left;
-	width:0px;
+	width:150px;
 	/*
 	background-color:#CCFFFF;
 */
 	}
 #rightSpace{
 	float:left;
-	width:0px;
+	width:150px;
 	/*
 	background-color:gray;
 */
 }
-
-#tag{
-	float:left;
-	border: 1px solid lime;
-}
-
 #link{
 	float:left;
 	/*border: 1px solid #FFFF00;*/
@@ -49,7 +43,13 @@
 	border: 1px #2b2b2b solid;	
 }
 
-
+.box{
+	background-color:while;
+	width:300px;
+	height:260px;
+	margin: 0 0 0 0;
+	/*border: 1px solid #FF0000;*/
+}
 .headline{
 	text-decoration:underline;
 }

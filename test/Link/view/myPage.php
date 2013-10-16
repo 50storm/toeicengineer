@@ -1,8 +1,8 @@
 ﻿<?php 
+//
 //http://codezine.jp/article/detail/433?p=2
 //http://www.php-labo.net/tutorial/class/pdo.html
 require_once('../Class/Utility.php');
-$objUtility = new Utility();
 session_start();
 //SESSIONにemailがなければログインしてないとする
 if(empty($_SESSION['email'])){
@@ -26,16 +26,16 @@ if ($_SERVER['HTTP_HOST'] == 'localhost'){
 }
 //var_dump($dsn);
 //ブックマーク登録
-$page_bookmark =$objUtility->makeUrlController('view_controller.php?page=insertUrl');
+$page_bookmark =Utility::makeUrlController('view_controller.php?page=insertUrl');
 //ユーザーID変更
-$page_config   =$objUtility->makeUrlController('view_controller.php?page=updUserId');
+$page_config   =Utility::makeUrlController('view_controller.php?page=updUserId');
 //表示名を変更
-$page_updUrl   = $objUtility->makeUrlController('view_controller.php?page=updateUrl');
+$page_updUrl   =Utility::makeUrlController('view_controller.php?page=updateUrl');
 //削除
-$page_delUrl   = $objUtility->makeUrlController('view_controller.php?page=delUrl');
+$page_delUrl   =Utility::makeUrlController('view_controller.php?page=delUrl');
 //$uri           = rtrim(dirname(dirname($_SERVER['PHP_SELF']))).'/view/myPage.php';
 //$page_selTag   = "http://".$host.$uri;
-$page_selTag   = $objUtility->makeUrlView('myPage.php');
+$page_selTag   =Utility::makeUrlView('myPage.php');
 //var_dump($page_selTag);
 //tagで抽出
 $bGetFlag=false;
@@ -245,7 +245,7 @@ body{
 <body>
 <div id="wrapper">
 	<div id="header">
-		<p>ID：<?php echo $objUtility->h($_SESSION['userId']); ?></p>
+		<p>ID：<?php echo Utility::h($_SESSION['userId']); ?></p>
 		<h1>Bookmark</h1>
 	</div>
 	<div id="menu" >
@@ -266,7 +266,7 @@ body{
 			}else{
 				echo '<ul class="tag" >';
 				echo '	<li>';
-				echo '		<a href="'.$page_selTag.'" target="_blank">すべて表示</a>';
+				echo '		<a href="'.$page_selTag.'" target="">すべて表示</a>';
 				echo '	</li> ';
 
 				while($row=$stmt_tag->fetch()){
@@ -280,7 +280,7 @@ body{
 					$stmt_tag_counter->execute();
 					$row_tag_counter=$stmt_tag_counter->fetch();
 					echo '<li>';
-					echo '		<a href="'.$page_selTag.'?tag='.$row['tag'].'" target="_blank">'.$row['tag'].'('.$row_tag_counter['count_tag'].')</a>';
+					echo '		<a href="'.$page_selTag.'?tag='.$row['tag'].'" target="">'.$row['tag'].'('.$row_tag_counter['count_tag'].')</a>';
 					echo '</li>';
 				}
 				echo '</ul>';
