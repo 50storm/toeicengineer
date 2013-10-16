@@ -1,7 +1,0 @@
-CREATE TABLE `toeicengineer_db`.`link` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `email` VARCHAR(100) NOT NULL,
-  `url` VARCHAR(300) NOT NULL,
-  `name` VARCHAR(45) NULL,
-  `tag` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`, `email`, `url`));

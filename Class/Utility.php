@@ -31,7 +31,6 @@ Class Utility{
 		}else{
 			$Url   = "http://".$host.$uri.$file;
 		}
-		
 		return $Url;
 	}
 	

@@ -38,6 +38,7 @@ mb_http_output("utf-8");
 //var_dump($dsn);
 //ブックマーク登録
 $page_bookmark =Utility::makeUrlController('view_controller.php?page=insertUrl');
+var_dump($page_bookmark);
 //ユーザーID変更
 $page_config   =Utility::makeUrlController('view_controller.php?page=updUserId');
 //表示名を変更
@@ -301,6 +302,7 @@ h2{
 	
 	</div>
 	<div id="Lables">
+		<p><a href="<?php echo $page_bookmark  ?>" >ブックマーク登録</a></p>
 		<h2>カテゴリー</h2>
 		<?php if($flgData == false) :?>
 			<p>ブックマークはありません。</p>
