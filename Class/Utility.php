@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 Class Utility{
 
 	public static  function h($str){
@@ -35,6 +35,24 @@ Class Utility{
 		return $Url;
 	}
 	
+	public static function makeLinkUrl($file){
+		$Url='';
+		$host  = $_SERVER['HTTP_HOST'];
+		//$uri   = rtrim(dirname(dirname($_SERVER['SCRIPT_NAME']))).'/view' ;
+		//$uri   = rtrim(dirname($_SERVER['SCRIPT_NAME'])).'/view' ;
+		$uri   = rtrim(dirname(dirname(dirname($_SERVER['SCRIPT_NAME'])))).'' ;
+		//localhostとsakuraサーバーで違う
+		if ($_SERVER['HTTP_HOST'] == 'localhost'){
+			$Url   = "http://".$host.$uri.DIRECTORY_SEPARATOR.$file;
+		}else{
+			$Url   = "http://".$host.$uri.$file;
+		}
+		return $Url;
+		//echo "URLテスット";
+		//var_dump($Url);
+		//exit;
+	}
+
 	
 	public static function makeUrlController($file){
 		$Url='';

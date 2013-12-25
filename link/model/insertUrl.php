@@ -75,7 +75,8 @@ try{
 }
 
 
-$Uri=Utility::makeUrlController('view_controller.php?page=myPage');
+$Uri=Utility::makeUrlController('view_controller.php?page=link');
+var_dump($Uri);
 header("Location: $Uri");
 exit;
 

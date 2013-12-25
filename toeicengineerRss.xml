@@ -18,4 +18,12 @@
 		<sy:updateFrequency>1</sy:updateFrequency>
 		<!-- ENTRIES -->
 	</channel>
+	<item>
+		<title>TOEIC950点(リスニグ満点)エンジニアのHP</title>
+		<link>http://toeicengineer.sakura.ne.jp/index.php</link>
+		<guid isPermaLink="true">　　　</guid>
+		<pubDate>Mon, 21 Oct 2013 18:00:00 +0900</pubDate>
+		<description><![CDATA[TOEIC受験履歴更新]]></description>
+	</item>
+
 </rss>

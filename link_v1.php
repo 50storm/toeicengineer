@@ -13,8 +13,6 @@ function makeUrlModel($file){
 	return $Url;
 }
 
-
-
 function makeUrlView($file){
 	$Url='';
 	$host  = $_SERVER['HTTP_HOST'];
@@ -29,25 +27,6 @@ function makeUrlView($file){
 	}
 	return $Url;
 }
-
-function makeLinkUrl($file){
-	$Url='';
-	$host  = $_SERVER['HTTP_HOST'];
-	//$uri   = rtrim(dirname(dirname($_SERVER['SCRIPT_NAME']))).'/view' ;
-	//$uri   = rtrim(dirname($_SERVER['SCRIPT_NAME'])).'/view' ;
-	$uri   = rtrim(dirname(dirname(dirname($_SERVER['SCRIPT_NAME'])))).'' ;
-	//localhostとsakuraサーバーで違う
-	if ($_SERVER['HTTP_HOST'] == 'localhost'){
-		$Url   = "http://".$host.$uri.DIRECTORY_SEPARATOR.$file;
-	}else{
-		$Url   = "http://".$host.$uri.$file;
-	}
-	return $Url;
-	//echo "URLテスット";
-	//var_dump($Url);
-	//exit;
-}
-
 
 function makeUrlController($file){
 	$Url='';
@@ -95,24 +74,24 @@ mb_http_output("utf-8");
 //ブックマーク登録
 $Url='';
 $host  = $_SERVER['HTTP_HOST'];
-echo "host\n";
-var_dump($host);
-echo "script_name\n";
-var_dump($_SERVER['SCRIPT_NAME']);
-$uri   = rtrim(dirname($_SERVER['SCRIPT_NAME'])).'/link/view/login.php';
-var_dump($uri);
+//echo "host\n";
+//var_dump($host);
+//echo "script_name\n";
+//var_dump($_SERVER['SCRIPT_NAME']);
+//$uri   = rtrim(dirname($_SERVER['SCRIPT_NAME'])).'/link/view/login.php';
+//var_dump($uri);
 if ($_SERVER['HTTP_HOST'] == 'localhost'){
-	$Url   = "http://".$host.$uri;
+	$Url   = "http://".$host.rtrim(dirname($_SERVER['SCRIPT_NAME'])).'/link/view/login.php';;
 }else{
-	$Url   = "http://".$host.$uri;
+	$Url   = "http://".$host.rtrim(dirname($_SERVER['SCRIPT_NAME'])).'link/view/login.php';;
 }
-var_dump($Url);
-
-$page_bookmark =makeUrlController('view_controller.php?page=login&action=insertUrl');
+//var_dump($Url);
+$page_bookmark =$Url;
+echo "確認\n";
 var_dump($page_bookmark);
 //ユーザーID変更
 //$page_config   =Utility::makeUrlController('view_controller.php?page=updUserId');
-$page_config   =makeUrlController('view_controller.php?page=updUserId');
+
 //表示名を変更
 //$page_updUrl   =Utility::makeUrlController('view_controller.php?page=updateUrl');
 $page_updUrl   =makeUrlController('view_controller.php?page=updateUrl');

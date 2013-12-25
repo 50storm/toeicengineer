@@ -59,7 +59,16 @@
 <div id="wrapper">
 	<header>
 		<div id="header">
-		<?php include"header.html";?>
+		<!--<?php include"header.html";?>-->
+			<h1><strong>TOEIC</strong>950点(<strong>リスニグ満点</strong>)わすれっぽいエンジニアのHP</h1>
+			<script>(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=196477567083991";
+				fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script>
 		</div>
 	</header>
 	<div id="menu" >

@@ -59,11 +59,25 @@
 <div id="wrapper">
 	<header>
 		<div id="header">
-		<?php include"header.html";?>
+			<h1><strong>TOEIC</strong>950点(<strong>リスニグ満点</strong>)わすれっぽいエンジニアのHP</h1>
+			<script>(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=196477567083991";
+				fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script>
 		</div>
 	</header>
 	<div id="menu" >
-		<?php include"menu.html";?>
+		<nav>
+			<ul id="dropMenu">
+				<li><a href="index.php">Home</a></li>
+				<li><a href="http://toeicengineer.blog.fc2.com/" target="_blank">Blog</a></li>
+				<li><a href="link.php" >Link</a></li>
+			</ul>
+		</nav>
 	</div>
 	<div id="AboutMe" class="box" >
 		<section>
@@ -77,34 +91,11 @@
 		</section>
 	</div>
 	<figure id="Photo" class="box" >
-		<?php include "photo.html"; ?>
+		<!--<?php include "photo.html"; ?>-->
+		<figcaption>TOEIC自己ベスト</figcaption>
+		<img src="./img/TOEIC950.png"  alt="TOEIC自己ベスト">
 	</figure>
 	<div id="ToeicResume" class="box" >
-	<!--
-		<section>
-			<h1 class="headline">TOEIC受験歴史</h1>
-			<ul>
-			<li>2008/05 　英会話のGEOSへ通いだす</li>
-			<li>2008/06/29 495(L:285/R:210)</li>
-			<li>2008/10/28 520(L:305/R:215)</li>
-			<li>2009/07～2010/07 GEOS卒業し<b>Vancouver</b>へ</li>
-			<li>2010/10/31 770(L:405/R:365)</li>
-			<li>2010/11/28 820(L:415/R:405)</li>
-			<li>2011/01/30 795(L:450/R:345)</li>
-			<li>2011/05/29 825(L:445/R:380)<b>※800地獄に入る</b></li>
-			<li>2011/11/27 825(L:430/R:395)</li>
-			<li>2012/01/29 850(L:450/R:400)</li>
-			<li>2012/03/18 865(L:445/R:420)</li>
-			<li>2012/06/24 820(L:445/R:375)</li>
-			<li>2012/07/22 900(L:490/R:410)※初の900!</li>
-			<li>2012/09/23 865(L:445/R:410)</li>
-			<li>2012/10/21 885(L:485/R:400)</li>
-			<li>2012/11/18 950(L:495/R:455)<strong title="フォー！">※自己ベスト！(リスニング満点)</strong></li>
-			<li>2013/03/17 890(L:450/R:440)</li>
-			<li>2013/04/15 905(L:465/R:440)※900超え3回目!</li>
-			</ul>
-		</section>
-	-->
 	<h1 title="受験日　点数　リスニング　リーディングをクリックすると並べ替えできるよ" >TOEIC受験歴史</h1>
 	<!--<details>
 	<summary title="クリックで開くよ" >このテーブルの説明</summary>
@@ -267,9 +258,12 @@
 		</script>
 	</div>
 	<footer>
-		<!--<div style="clear:both;" > -->
-			<?php include"footer.html"; ?>
-		<!-- </div> -->
+		<hr>
+		<p>Copyright 2013<strong>Hiroshi Igarashi</strong></p>
+		<p><a href="http://toeicengineer.blog.fc2.com/" target="_blank">TOEIC950点(リスニング満点)わすれっぽいエンジニアブログです。</a></p>
+		<p><a href="http://toeicengineer.blogspot.jp/" target="_blank">TOEIC950点(リスニング満点)わすれっぽいエンジニアブログです。(旧)</a></p>
+		<div class="fb-like" data-href="http://toeicengineer.sakura.ne.jp/" data-send="true" data-width="450" data-show-faces="true">
+		</div>
 	</footer>
 </div>
 </body>
