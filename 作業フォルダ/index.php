@@ -73,7 +73,7 @@
 			<p>成田とカナダとお酒をこよなく愛す。カナダのマクドナルドで就業経験アリ。</p>
 			<p>趣味は、TOEIC、釣り、旅(バックパッカーで、ロッキー山脈。九州縦断(福岡～佐賀～熊本～屋久島にいきました)</p>
 			<p>仕事ではASP.NET HTML Css JavaScript SQLserver を利用。趣味で php　jQuery MySqlを触っています。</p>
-			<p>もしTOEICでお困りの方がいらしたら、<a href="http://toeicengineer.sakura.ne.jp/bbs/light.cgi" target="_blank">BBS</a>へ</p>
+			<p>もしTOEICでお困りの方がいらしたら、ご相談ください。<a href="mailto:iga1128gmail.com">iga1128@gmail.com</a></p>
 		</section>
 	</div>
 	<figure id="Photo" class="box" >
