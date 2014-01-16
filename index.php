@@ -71,9 +71,9 @@
 			<p>三人兄弟(姉一人、弟一人)の長男坊。商店の親のもとに生まれる。(1981年生まれ)</p>
 			<p>自称TOEICエンジニア(TOEIC950点取得)</p>
 			<p>成田とカナダとお酒をこよなく愛す。カナダのマクドナルドで就業経験アリ。</p>
-			<p>趣味は、TOEIC、釣り、旅(バックパッカーで、ロッキー山脈。九州縦断(福岡～佐賀～熊本～屋久島にいきました)</p>
-			<p>仕事ではASP.NET HTML Css JavaScript SQLserver を利用。趣味で php　jQuery MySqlを触っています。</p>
-			<p>もしTOEICでお困りの方がいらしたら、<a href="http://toeicengineer.sakura.ne.jp/bbs/light.cgi" target="_blank">BBS</a>へ</p>
+			<p>趣味:釣り、旅、映画鑑賞</p>
+			<p>TOEICスキル：根性</p>
+			<p>エンジニアスキル：ASP.NET HTML Css JavaScript SQLserver php　jQuery MySql</p>
 		</section>
 	</div>
 	<figure id="Photo" class="box" >
