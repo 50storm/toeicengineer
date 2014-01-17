@@ -279,6 +279,7 @@ $row_tag_counter=$stmt_tag_counter->fetch();
 */
 
 </script>
+<link rel="stylesheet" href="./Css/Header.css" type="text/css">
 <link rel="stylesheet" href="./Css/Menu.css" type="text/css">
 <link rel="stylesheet" href="./Css/Wrap.css" type="text/css">
 <!--<link rel="stylesheet" href="./Css/Link.css" type="text/css">

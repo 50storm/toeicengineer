@@ -108,7 +108,8 @@ EOM
 
 	# “ŠeƒtƒH[ƒ€
 	print <<EOM;
-<hr width="90%"></div>
+<hr width="90%">
+</div>
 <form method="post" action="$bbscgi">
 <blockquote>
 <table cellpadding="1" cellspacing="1">

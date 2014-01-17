@@ -8,7 +8,7 @@
 <meta name="keywords" content="TOEIC,エンジニア" /> 
 <meta name="description" content="TOEIC950点(リスニグ満点)わすれっぽいエンジニアのHP"/>
 <meta name="robots" content="index,follow"/>
- <meta name="viewport" content="width=device-width ">
+<meta name="viewport" content="width=device-width ">
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">
 	google.load("jquery", "1.6.1");
@@ -16,21 +16,20 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script src="./script/jquery.dataTables.js" type="text/javascript"></script>
-
 <script>
 	$(function() {
 		$('#ToeicResume summary').tooltip({
 			position:'top right'
 		});
-	   $('#ToeicScore').dataTable(
+		$('#ToeicScore').dataTable(
 					{
 						"aLengthMenu": [5, 10, 15,20,-1],
 						"iDisplayLength": 20
 					}
 		)
 	});
-	
 </script>
+<link rel="stylesheet" href="./Css/Header.css" type="text/css">
 <link rel="stylesheet" href="./Css/Menu.css" type="text/css">
 <link rel="stylesheet" href="./Css/Wrap.css" type="text/css">
 <link rel="stylesheet" href="./Css/Index.css" type="text/css">
@@ -43,7 +42,6 @@
 <link rel="stylesheet" href="./Css/jquery.dataTables_themeroller.css" type="text/css">
 <link rel="stylesheet" href="./Css/demo_table_iui.css" type="text/css">
 -->
-
 </head>
 <body>
 <div id="fb-root"></div>
@@ -59,7 +57,7 @@
 <div id="wrapper">
 	<header>
 		<div id="header">
-		<?php include"header.html";?>
+			<?php include"header.html";?>
 		</div>
 	</header>
 	<div id="menu" >

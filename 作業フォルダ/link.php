@@ -1,21 +1,77 @@
 <?php
 session_start();
-//
-//http://codezine.jp/article/detail/433?p=2
-//http://www.php-labo.net/tutorial/class/pdo.html
+
+function h($str){
+	return htmlspecialchars($str, ENT_QUOTES,'UTF-8');
+}
+
+function makeUrlModel($file){
+	$Url='';
+	$host  = $_SERVER['HTTP_HOST'];
+	$uri   = rtrim(dirname(dirname($_SERVER['SCRIPT_NAME']))).'/model' ;
+	$Url   = "http://".$host.$uri."/".$file;
+	return $Url;
+}
+
+function makeUrlView($file){
+	$Url='';
+	$host  = $_SERVER['HTTP_HOST'];
+	//$uri   = rtrim(dirname(dirname($_SERVER['SCRIPT_NAME']))).'/view' ;
+	//$uri   = rtrim(dirname($_SERVER['SCRIPT_NAME'])).'/view' ;
+	$uri   = rtrim(dirname($_SERVER['SCRIPT_NAME'])).'' ;
+	//localhostとsakuraサーバーで違う
+	if ($_SERVER['HTTP_HOST'] == 'localhost'){
+		$Url   = "http://".$host.$uri.DIRECTORY_SEPARATOR.$file;
+	}else{
+		$Url   = "http://".$host.$uri.$file;
+	}
+	return $Url;
+}
+
+function makeLinkUrl($file){
+	$Url='';
+	$host  = $_SERVER['HTTP_HOST'];
+	//$uri   = rtrim(dirname(dirname($_SERVER['SCRIPT_NAME']))).'/view' ;
+	//$uri   = rtrim(dirname($_SERVER['SCRIPT_NAME'])).'/view' ;
+	$uri   = rtrim(dirname(dirname(dirname($_SERVER['SCRIPT_NAME'])))).'' ;
+	//localhostとsakuraサーバーで違う
+	if ($_SERVER['HTTP_HOST'] == 'localhost'){
+		$Url   = "http://".$host.$uri.DIRECTORY_SEPARATOR.$file;
+	}else{
+		$Url   = "http://".$host.$uri.$file;
+	}
+	return $Url;
+	//echo "URLテスット";
+	//var_dump($Url);
+	//exit;
+}
+
+
+function makeUrlController($file){
+	$Url='';
+	$host  = $_SERVER['HTTP_HOST'];
+	//$uri   = rtrim(dirname(dirname($_SERVER['SCRIPT_NAME']))).'/controller' ;
+	$uri   = rtrim(dirname($_SERVER['SCRIPT_NAME'])).DIRECTORY_SEPARATOR.'link'.DIRECTORY_SEPARATOR.'controller' ;
+	if ($_SERVER['HTTP_HOST'] == 'localhost'){
+		$Url   = "http://".$host.$uri.DIRECTORY_SEPARATOR.$file;
+	}else{
+		$Url   = "http://".$host.$uri.$file;
+	}
+	$Url   = "http://".$host.$uri.DIRECTORY_SEPARATOR.$file;
+	return $Url;
+}
 
 if ($_SERVER['HTTP_HOST'] == 'localhost'){
-	require_once('./Class/Utility.php');
-	$dsn      = 'mysql:dbname=toeicengineer_db;host=localhost;charset=UTF-8;';
+	//require_once('./Class/Utility.php');
+	$dsn      = 'mysql:dbname=toeicengineer_db;host=localhost;charset=utf8;';
 	$user     = 'toeicengineer';
 	$password = 'abc';
 }else{
-	require_once('./Class/Utility.php');
+	//require_once('./Class/Utility.php');
 	$dsn      ='mysql:dbname=toeicengineer_db;host=mysql464.db.sakura.ne.jp;charset=utf8';
 	$user     ='toeicengineer';
 	$password ='hiro1128';
 }
-
 
 /*
 TODO　
@@ -32,22 +88,40 @@ if(empty($_SESSION['email'])){
 mb_language("japanese");
 mb_internal_encoding("UTF-8");
 mb_http_output("utf-8");
-//echo mb_internal_encoding();
-
 
 //var_dump($dsn);
 //ブックマーク登録
-$page_bookmark =Utility::makeUrlController('view_controller.php?page=insertUrl');
+$Url='';
+$host  = $_SERVER['HTTP_HOST'];
+//echo "host\n";
+//var_dump($host);
+//echo "script_name\n";
+//var_dump($_SERVER['SCRIPT_NAME']);
+$uri   = rtrim(dirname($_SERVER['SCRIPT_NAME'])).'/link/view/login.php';
+//var_dump($uri);
+if ($_SERVER['HTTP_HOST'] == 'localhost'){
+	$Url   = "http://".$host.$uri;
+}else{
+	$Url   = "http://".$host.$uri;
+}
+//var_dump($Url);
+
+$page_bookmark =makeUrlController('view_controller.php?page=login&action=insertUrl');
+//var_dump($page_bookmark);
 //ユーザーID変更
-$page_config   =Utility::makeUrlController('view_controller.php?page=updUserId');
+//$page_config   =Utility::makeUrlController('view_controller.php?page=updUserId');
+$page_config   =makeUrlController('view_controller.php?page=updUserId');
 //表示名を変更
-$page_updUrl   =Utility::makeUrlController('view_controller.php?page=updateUrl');
+//$page_updUrl   =Utility::makeUrlController('view_controller.php?page=updateUrl');
+$page_updUrl   =makeUrlController('view_controller.php?page=updateUrl');
 //削除
-$page_delUrl   =Utility::makeUrlController('view_controller.php?page=delUrl');
+//$page_delUrl   =Utility::makeUrlController('view_controller.php?page=delUrl');
+$page_delUrl   =makeUrlController('view_controller.php?page=delUrl');
 
 //$uri           = rtrim(dirname(dirname($_SERVER['PHP_SELF']))).'/view/myPage.php';
 //$page_selTag   = "http://".$host.$uri;
-$page_selTag   =Utility::makeUrlView('link.php');
+//$page_selTag   =Utility::makeUrlView('link.php');
+$page_selTag   =makeUrlView('link.php');
 //var_dump($page_selTag);
 //tagで抽出
 $bGetFlag=false;
@@ -65,7 +139,7 @@ if (isset($_GET['page'])){
 //var_dump($_GET);
 //var_dump($_GET['tag']);
 //var_dump($_GET['page']);
-define('PER_PAGE', 25);//1ページ当たり
+define('PER_PAGE', 20);//1ページ当たり
 $offset   = PER_PAGE*($page-1);
 $pdo_bookmark  =null;
 $sql_bookmark  ="";
@@ -153,9 +227,6 @@ if (intVal($stmt_tag->rowCount()) == 0) {
 	}
 }
 
-//var_dump($flgData);
-
-//var_dump($page_bookmark);
 
 //タグ表示用
 $pdo_tag_counter = new  PDO($dsn, $user, $password);
@@ -183,9 +254,6 @@ $row_tag_counter=$stmt_tag_counter->fetch();
 	google.load("jquery", "1.6.1");
 </script>
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-<script type="text/javascript">
-	google.load("jquery", "1.6.1");
-</script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script src="./script/jquery.dataTables.js" type="text/javascript"></script>
@@ -206,6 +274,7 @@ $row_tag_counter=$stmt_tag_counter->fetch();
 */
 
 </script>
+<link rel="stylesheet" href="./Css/Header.css" type="text/css">
 <link rel="stylesheet" href="./Css/Menu.css" type="text/css">
 <link rel="stylesheet" href="./Css/Wrap.css" type="text/css">
 <!--<link rel="stylesheet" href="./Css/Link.css" type="text/css">
@@ -218,9 +287,9 @@ $row_tag_counter=$stmt_tag_counter->fetch();
 
 /*タグ(ラベル)*/
 #Lables{
-	
 	float:left;
-	border: 1px solid #FFFFFF;
+	width:200px;
+	/*border: 1px solid lime;*/
 }
 /*ブックマーク(リンク)*/
 #link{
@@ -230,13 +299,15 @@ $row_tag_counter=$stmt_tag_counter->fetch();
 
 }
 #Ad_Space{
-	/*border: 1px solid #FFFF00;*/
+	border: 1px solid #FFFF00;
 	width:468px;
 	height:68px;
 	clear:left;
-	margin-left : 146px ; 
+	margin-left : 200px ; 
 	margin-right : auto ;
 }
+
+
 /*右側スペース(広告予定)*/
 #rightSpace{
 	float:right;
@@ -299,14 +370,10 @@ h2{
 <body>
 <div id="wrapper">
 	<div id="header">
-	
 		<?php include"header.html"; ?>
-			
 	</div>
 	<div id="menu" >
-	
 		<?php include"menu.html";  ?>
-	
 	</div>
 	<div id="Lables">
 		<h2>カテゴリー</h2>
@@ -315,16 +382,17 @@ h2{
 		<?php else :?>
 			<ul class="tag" >
 				<li>
-					<a href="<?php echo Utility::h($page_selTag);?>">すべて表示</a>
+					<a href="<?php echo h($page_selTag);?>">すべて表示</a>
 				</li>
 				<?php foreach ($tags as $value): ?>
 					<?php $query=$page_selTag."?tag=".$value["tag"];?>
 					<li>
-						<a href="<?php echo Utility::h($query);?>"><?php echo Utility::h($value["tag"]); ?></a>
+						<a href="<?php echo h($query);?>"><?php echo h($value["tag"]); ?></a>
 					</li>
 				<?php endforeach; ?>
 			</ul>
 		<?php endif ;?>
+		<!--<p><a href="<?php echo $page_bookmark  ?>" >ブックマーク登録</a></p>-->
 	</div>
 	<div id="link">
 		<?php if($flgData == false) :?>
@@ -336,8 +404,8 @@ h2{
 					<th>カテゴリー</th><th>名前</th>
 					<?php foreach ($bookmarks as $value): ?>
 						<tr>
-							<td><?php echo Utility::h($value["tag"]); ?></td>
-							<td><a href="<?php echo Utility::h($value["url"]); ?>" target="_blank" title=""><?php echo Utility::h($value["name"]); ?></a></td>
+							<td><?php echo h($value["tag"]); ?></td>
+							<td><a href="<?php echo h($value["url"]); ?>" target="_blank" title=""><?php echo h($value["name"]); ?></a></td>
 						</tr>
 					<?php endforeach; ?>
 				</tbody>
@@ -348,7 +416,7 @@ h2{
 			<?php endif; ?>
 			<!--ページ番号-->
 			<?php for ($i = 1 ; $i <= $totalPage ; $i++) : ?>
-				<a href="?page=<?php echo Utility::h($i)?>"><?php echo Utility::h($i)?></a>
+				<a href="?page=<?php echo h($i)?>"><?php echo h($i)?></a>
 			<?php endfor ;?>
 			<?php if ($page < $totalPage) : ?>
 				<a href="?page=<?php echo $page+1; ?>">次</a>
