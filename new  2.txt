@@ -1,0 +1,47 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;&lt;/title&gt;
+	&lt;script&gt;
+	
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id="header"&gt;
+&lt;div id="footerNavLink"&gt;&lt;a href=""&gt;+&lt;/a&gt;&lt;/div&gt;
+&lt;h1&gt;Header&lt;/h1&gt;
+
+&lt;/div&gt;&lt;!-- /header --&gt;
+
+&lt;div id="container"&gt;
+
+&lt;div id="main"&gt;
+&lt;pre&gt;
+&lt;code&gt;
+&lt;table&gt;
+	&lt;head&gt;
+		&lt;th&gt;a&lt;/th&gt;&lt;th&gt;b&lt;/th&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;aa&lt;/td&gt;
+				&lt;td&gt;bb&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;/div&gt;&lt;!-- /main --&gt;
+&lt;div id="sub"&gt;
+&lt;/div&gt;&lt;!-- /sub --&gt;
+
+&lt;/div&gt;&lt;!-- /container --&gt;
+
+&lt;div id="footer"&gt;
+&lt;/div&gt;&lt;!-- /footer --&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;

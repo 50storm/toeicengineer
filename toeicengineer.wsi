@@ -1,0 +1,106 @@
+[SiteInfoSet]
+Version=0.20
+[Site]
+Title=
+Link=http://toeicengineer.sakura.ne.jp/
+Description=
+Subject=
+Type=Text
+Language=ja
+Publisher=
+Contributor=
+DateType=0
+Copyright=Copyright (c) 2013, [‚ ‚È‚½‚Ì‚¨–¼‘O‚È‚Ç]
+UpdatePeriod=daily
+UpdateFrequency=1
+UpdateDateType=0
+LogoUrl=
+LogoName=
+LinkTo=
+[Creator]
+Name=
+Mail=
+Url=
+[File]
+LocalDirectory=
+ServerUrl=
+PathRss1=
+PathRss2=
+PathAtom3=
+LocalCharCode=2
+OutputCharCode=0
+NoAlert=0
+[PageTitleGet]
+FromElement=title
+FromArea1=<div class="title">
+FromArea2=</div>
+FromOption=0
+[DescriptionGet]
+FromElement=p
+FromArea1=<p class="head">
+FromArea2=</p>
+FromOption=0
+[ContentGet]
+FromElement=p
+FromArea1=<p class="main">
+FromArea2=</p>
+FromOption=0
+[SubjectGet]
+FromElement=h3
+FromArea1=<div class="keyword">
+FromArea2=</div>
+FromOption=0
+[PageTitleStock]
+SelectedItemNum=1
+SelectedElementsNum=0
+SelectedArea1Num=0
+SelectedArea2Num=0
+SelectedPlaceOption=0
+ElementsStock=title[#]h1[#]h2[#]
+Area1Stock=<div class="title">[#]<p class="title">[#]
+Area2Stock=</div>[#]</p>[#]
+[DescriptionStock]
+SelectedItemNum=1
+SelectedElementsNum=0
+SelectedArea1Num=0
+SelectedArea2Num=0
+SelectedPlaceOption=0
+ElementsStock=p[#]body[#]
+Area1Stock=<p class="head">[#]
+Area2Stock=</p>[#]
+[ContentStock]
+SelectedItemNum=1
+SelectedElementsNum=0
+SelectedArea1Num=0
+SelectedArea2Num=0
+SelectedPlaceOption=0
+ElementsStock=p[#]body[#]
+Area1Stock=<p class="main">[#]
+Area2Stock=</p>[#]
+[SubjectStock]
+SelectedItemNum=1
+SelectedElementsNum=0
+SelectedArea1Num=0
+SelectedArea2Num=0
+SelectedPlaceOption=0
+ElementsStock=h3[#]
+Area1Stock=<div class="keyword">[#]
+Area2Stock=</div>[#]
+[Statics]
+StaticAddFiles=
+AddPriorityType=0
+UseTimeInfo=0
+[OutFolders]
+Rules=
+[FTP]
+HostName=
+Account=
+Kotori=™œ›˜žœ
+Directory=
+Timeout=24000
+Passive=0
+[Ping]
+UseServers=111100000
+ListFile=PingList.dat
+Timeout=30000
+Options=0

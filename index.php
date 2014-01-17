@@ -8,7 +8,7 @@
 <meta name="keywords" content="TOEIC,エンジニア" /> 
 <meta name="description" content="TOEIC950点(リスニグ満点)わすれっぽいエンジニアのHP"/>
 <meta name="robots" content="index,follow"/>
- <meta name="viewport" content="width=device-width ">
+<meta name="viewport" content="width=device-width ">
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">
 	google.load("jquery", "1.6.1");
@@ -16,21 +16,20 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script src="./script/jquery.dataTables.js" type="text/javascript"></script>
-
 <script>
 	$(function() {
 		$('#ToeicResume summary').tooltip({
 			position:'top right'
 		});
-	   $('#ToeicScore').dataTable(
+		$('#ToeicScore').dataTable(
 					{
 						"aLengthMenu": [5, 10, 15,20,-1],
 						"iDisplayLength": 20
 					}
 		)
 	});
-	
 </script>
+<link rel="stylesheet" href="./Css/Header.css" type="text/css">
 <link rel="stylesheet" href="./Css/Menu.css" type="text/css">
 <link rel="stylesheet" href="./Css/Wrap.css" type="text/css">
 <link rel="stylesheet" href="./Css/Index.css" type="text/css">
@@ -43,7 +42,6 @@
 <link rel="stylesheet" href="./Css/jquery.dataTables_themeroller.css" type="text/css">
 <link rel="stylesheet" href="./Css/demo_table_iui.css" type="text/css">
 -->
-
 </head>
 <body>
 <div id="fb-root"></div>
@@ -59,7 +57,7 @@
 <div id="wrapper">
 	<header>
 		<div id="header">
-		<?php include"header.html";?>
+			<?php include"header.html";?>
 		</div>
 	</header>
 	<div id="menu" >
@@ -68,10 +66,12 @@
 	<div id="AboutMe" class="box" >
 		<section>
 			<h1>About Me</h1>
-			<p>三人兄弟(姉一人、弟一人)の長男坊。商店の親のもとに生まれる。(1981年生まれ)。<br>成田とカナダとお酒をこよなく愛す。カナダで仕事を探しに、ワーキングホリデーで渡航。マクドナルドで就業。今は、まったりできる嫁さんを探し、日本と海外のデュアルライフを実現するのが夢。
-			<br>趣味は、釣り、旅(バックパッカーで、ロッキー山脈。九州縦断(福岡～佐賀～熊本～屋久島にいきました)
-			<br>仕事ではASP.NET HTML Css JavaScript SQLserver VB を利用。趣味で php　jQuery MySqlを触っています。
-			</p>
+			<p>三人兄弟(姉一人、弟一人)の長男坊。商店の親のもとに生まれる。(1981年生まれ)</p>
+			<p>自称TOEICエンジニア(TOEIC950点取得)</p>
+			<p>成田とカナダとお酒をこよなく愛す。カナダのマクドナルドで就業経験アリ。</p>
+			<p>趣味:釣り、旅、映画鑑賞</p>
+			<p>TOEICスキル：根性</p>
+			<p>エンジニアスキル：ASP.NET HTML Css JavaScript SQLserver php　jQuery MySql</p>
 		</section>
 	</div>
 	<figure id="Photo" class="box" >
@@ -231,6 +231,13 @@
 				<td class="center">465</td>
 				<td class="center">440</td>
 				<td class="center"></td>
+			</tr>
+			<tr class="odd gradeA">
+				<td class="center">2013/09/29</td>
+				<td class="center">935</td>
+				<td class="center">475</td>
+				<td class="center">460</td>
+				<td class="center">※リーディングベストスコア</td>
 			</tr>
 		</tbody>
 		<tfoot>
